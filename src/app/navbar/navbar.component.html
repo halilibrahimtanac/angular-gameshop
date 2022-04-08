@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Game&Shop</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="isSigned;" class="nav-item dropdown">
+        <a href="/cart" class="nav-link">
+          Cart
+        </a>
+      </li>
+      <li *ngIf="isSigned;" class="nav-item active">
+        <a class="nav-link" href="/library">Library</a>
+      </li>
+      <li *ngIf="isSigned;" class="nav-item active">
+        <a class="nav-link" href="/purchaseHistory">Purchase History</a>
+      </li>
+      <li *ngIf="isAdmin;" class="nav-item active">
+        <a class="nav-link" href="/addGame">Add Game</a>
+      </li>
+    </ul>
+      <span *ngIf="isSigned; else SignIn" style="margin-left: auto;">
+          <label style="color: rgba(0,0,0,.55); font-size: 15px;"><strong>{{username}}</strong></label>&nbsp;
+          <button class="btn btn-outline-success my-2 my-sm-0" (click)="signOut()" style="margin-left: auto;">Sign Out</button>
+      </span>
+      <ng-template #SignIn>
+      <a class="btn btn-outline-success my-2 my-sm-0" style="margin-left: auto;" href="/signin">Sign In</a>
+      <a class="btn btn-outline-success my-2 my-sm-0" style="margin-left: 5px;" href="/signup">Sign Up</a>
+      </ng-template>
+    </div>
+</nav>

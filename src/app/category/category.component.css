@@ -1,0 +1,8 @@
+.category_block li:hover {
+    background-color: #007bff;
+    
+}
+.category_block li:hover a {
+    color: white;
+}
+

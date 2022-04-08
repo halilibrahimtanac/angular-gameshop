@@ -1,0 +1,5 @@
+<ul class="list-group category_block">
+  <li class="list-group-item"><a href="game/">All</a></li>
+  <li *ngFor="let category of categories" class="list-group-item"><a href="game/{{category.categoryName}}">{{ category.categoryName }}</a></li>
+</ul>
+

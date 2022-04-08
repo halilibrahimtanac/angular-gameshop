@@ -1,0 +1,35 @@
+
+<div class="table-responsive">
+<table class="table user-list">
+  <thead>
+    <tr>
+      <th><span>Game</span></th>
+      <th class="text-center"><span>Platform</span></th>
+      <th class="text-center"><span>Amount</span></th>
+      <th><span>Total Price</span></th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cartItem of cart">
+      <td>
+        <img src="{{cartItem.gameImg}}" alt="">
+        {{ cartItem.gameName }}
+      </td>
+      <td class="text-center">
+        {{ cartItem.gamePlatform }}
+      </td>
+      <td class="text-center">
+        {{ cartItem.amount }}
+      </td>
+      <td style="width: 10%;">
+        {{ cartItem.price * cartItem.amount }}
+      </td>
+      <td >
+        <a  class="btn btn-outline-primary btn-sm mr-md-3 mb-2 mb-md-0" style="margin-right: 30px;" (click)="buyGameComponent(cartItem)">Buy</a>
+        <a class="btn btn-outline-danger btn-sm mr-md-3 mb-2 mb-md-0" (click)="removeFromCart(cartItem)" style="margin-left: 60%;">X</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

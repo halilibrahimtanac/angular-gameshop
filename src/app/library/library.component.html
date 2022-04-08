@@ -1,0 +1,11 @@
+<div class="container">
+<h1 style="text-align:center;">Library</h1>
+<div *ngFor="let game of user.library" class="card" style="width: 18rem; display:inline-block; margin-right:3px;">
+    <img [src]="game.gameImg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card-title">{{ game.gameName}}</h3>
+      <p class="card-text">{{ game.description}}<br /><strong>Amount of game:</strong> {{ game.amount}}</p>
+      <a href="#" class="btn btn-primary">Go {{ game.gamePlatform }}</a>
+    </div>
+  </div>
+</div>

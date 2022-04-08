@@ -1,0 +1,41 @@
+<aside class="col-sm-4" style="margin-left: auto; margin-right: auto; margin-top: 45px;">
+    <div class="card">
+    <article class="card-body">
+    <h4 class="card-title mb-4 mt-1">Add Game</h4>
+         <form [formGroup]="addGameForm" (ngSubmit)="addGame()" class="form-group">
+        <div>
+            <label>Game Name</label>
+            <input name="" class="form-control" placeholder="Game name" type="text" name="game_name" formControlName="gameName" />
+        </div> 
+        <div class="form-group">
+            <label>Genre</label>
+            <select name="" class="form-control" formControlName="genre">
+                <option *ngFor="let category of categories" [value]="category.categoryName">{{ category.categoryName }}</option>
+            </select>
+        </div> 
+        <div class="form-group">
+            <label>Price</label>
+            <input class="form-control" placeholder="price" type="text" name="price" formControlName="price" />
+        </div>
+        <div class="form-group">
+            <label>Game Platform</label>
+            <select name="platforms" class="form-control" formControlName="gamePlatform">
+                <option *ngFor="let platform of platforms" [value]="platform.platformName">{{ platform.platformName }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input class="form-control" placeholder="description" type="text" formControlName="description" />
+        </div>
+        <div class="form-group">
+            <label>Game Image</label>
+            <input class="form-control" placeholder="url" type="text"  formControlName="gameImg" />
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" [disabled]="addGameForm.invalid" class="btn btn-primary btn-block">Add Game</button>
+        </div>                                                         
+    </form>
+    </article>
+    </div>
+    </aside>

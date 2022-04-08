@@ -1,0 +1,28 @@
+<aside class="col-sm-4" style="margin-left: auto; margin-right: auto; margin-top: 45px;">
+<div class="card">
+<article class="card-body">
+<h4 class="card-title mb-4 mt-1">Sign in</h4>
+	 <form>
+    <div class="form-group">
+    	<label>Your username</label>
+        <input name="" class="form-control" placeholder="Username" type="text" name="user_name" [(ngModel)] = "username" />
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    	<label>Your password</label>
+        <input class="form-control" placeholder="******" type="password" name="password" [(ngModel)] = "password" />
+        <label *ngIf="isPassword; else WrongPass"></label>
+        <ng-template #WrongPass>
+            <label>wrong password or username</label>
+        </ng-template>
+    </div>
+     <!-- form-group// --> 
+    <div class="form-group"> 
+    <br/> <!-- checkbox .// -->
+    </div> <!-- form-group// -->  
+    <div class="form-group">
+        <button (click)="verify()" class="btn btn-primary btn-block"> Login  </button>
+    </div> <!-- form-group// -->                                                           
+</form>
+</article>
+</div>
+</aside>
